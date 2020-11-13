@@ -47,7 +47,7 @@ alertmanager:
   ## alertmanager container image
   ##
   image:
-    repository: prom/alertmanager
+    repository: registry.cn-beijing.aliyuncs.com/k7scn/alertmanager
     tag: v0.21.0
     pullPolicy: IfNotPresent
 
@@ -342,7 +342,7 @@ configmapReload:
     ## configmap-reload container image
     ##
     image:
-      repository: jimmidyson/configmap-reload
+      repository: registry.cn-beijing.aliyuncs.com/k7scn/configmap-reload
       tag: v0.4.0
       pullPolicy: IfNotPresent
 
@@ -380,7 +380,7 @@ configmapReload:
     ## configmap-reload container image
     ##
     image:
-      repository: jimmidyson/configmap-reload
+      repository: registry.cn-beijing.aliyuncs.com/k7scn/configmap-reload
       tag: v0.4.0
       pullPolicy: IfNotPresent
 
@@ -437,7 +437,7 @@ nodeExporter:
   ## node-exporter container image
   ##
   image:
-    repository: prom/node-exporter
+    repository: registry.cn-beijing.aliyuncs.com/k7scn/node-exporter
     tag: v1.0.1
     pullPolicy: IfNotPresent
 
@@ -578,7 +578,7 @@ server:
   ## Prometheus server container image
   ##
   image:
-    repository: prom/prometheus
+    repository: registry.cn-beijing.aliyuncs.com/k7scn/prometheus
     tag: v2.21.0
     pullPolicy: IfNotPresent
 
@@ -622,7 +622,7 @@ server:
     - web.enable-lifecycle
     ## web.enable-admin-api flag controls access to the administrative HTTP API which includes functionality such as
     ## deleting time series. This is disabled by default.
-    # - web.enable-admin-api
+    - web.enable-admin-api
     ##
     ## storage.tsdb.no-lockfile flag controls BD locking
     # - storage.tsdb.no-lockfile
@@ -983,7 +983,7 @@ pushgateway:
   ## pushgateway container image
   ##
   image:
-    repository: prom/pushgateway
+    repository: registry.cn-beijing.aliyuncs.com/k7scn/pushgateway
     tag: v1.2.0
     pullPolicy: IfNotPresent
 

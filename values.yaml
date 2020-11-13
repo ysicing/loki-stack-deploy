@@ -5,7 +5,7 @@ promtail:
   enabled: true
 
 fluent-bit:
-  enabled: false
+  enabled: true
 
 grafana:
   enabled: true
@@ -17,9 +17,16 @@ grafana:
 
 prometheus:
   enabled: true
-
+  alertmanager:
+    persistentVolume:
+      enabled: false
+  server:
+    persistentVolume:
+      enabled: false
+  pushgateway:
+    enabled: false
 filebeat:
-  enabled: true
+  enabled: false
   filebeatConfig:
     filebeat.yml: |
       # logging.level: debug
@@ -37,7 +44,9 @@ filebeat:
         hosts: ["logstash-loki:5044"]
 
 logstash:
-  enabled: true
+  enabled: false
+  persistence: 
+    enabled: false
   image:
     repository: grafana/logstash-output-loki
     tag: 1.0.1
